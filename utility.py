@@ -117,5 +117,34 @@ def calculate_ndcg(model, X_test, y_test, q_id_test, k=5):
     return np.mean(ndcg_scores)
 
 
+# TODO: add xgboost implementation
+# params = {
+#     'tree_method': 'hist',
+#     'objective': 'rank:ndcg',  # Use rank:ndcg for optimizing NDCG
+#     'eval_metric': 'ndcg@5',    # Evaluation metric NDCG@k
+#     'eta': 0.1,                  # Learning rate
+#     'max_depth': 6               # Maximum depth of a tree
+# }
+#
+# # Initialize the XGBRanker with modified parameters
+# model = xgb.XGBRanker(**params)
+#
+# model.fit(X_train.to_numpy(), y_train.to_numpy(), qid = groups, verbose=True)
+# import xgboost as xgb
+#
+# def train_xgb_ranker(X_train, y_train, train_groups, params=None):
+#     if params is None:
+#         params = {
+#             'tree_method': 'hist',
+#             'objective': 'rank:ndcg',
+#             'eval_metric': 'ndcg@5',
+#             'eta': 0.1,
+#             'max_depth': 6
+#         }
+#
+#     model = xgb.XGBRanker(**params)
+#     model.fit(X_train, y_train, qid=train_groups, verbose=True)
+#
+#     return model
 
 
